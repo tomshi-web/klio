@@ -1,0 +1,1997 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KLIŌ — בגדי ים</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --white: #ffffff;
+    --off-white: #f5f4f2;
+    --light-gray: #e8e6e2;
+    --mid-gray: #b0ada8;
+    --dark-gray: #3a3835;
+    --charcoal: #1e1d1b;
+    --accent: #8a8680;
+  }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--off-white);
+    color: var(--charcoal);
+    font-weight: 300;
+    min-height: 100vh;
+    padding-top: 5.5rem;
+  }
+
+  /* NAV */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 3rem;
+    background: rgba(30,29,27,0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 0.5px solid rgba(255,255,255,0.08);
+    border-radius: 60px;
+    position: fixed;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 6rem);
+    max-width: 1100px;
+    z-index: 100;
+    box-shadow: 0 4px 32px rgba(30,29,27,0.08);
+  }
+
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  .logo span {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: nowrap;
+  }
+
+  nav ul a {
+    text-decoration: none;
+    color: var(--mid-gray);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 300;
+    transition: color 0.3s;
+    white-space: nowrap;
+  }
+
+  nav ul a:hover { color: var(--white); }
+
+  .nav-icons {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .nav-icon {
+    cursor: pointer;
+    color: var(--mid-gray);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  .nav-icon:hover { color: var(--white); }
+
+  /* HOME BUTTON */
+  .back-home-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: var(--accent);
+    background: none;
+    border: 0.5px solid var(--light-gray);
+    padding: 0.55rem 1.1rem;
+    cursor: pointer;
+    transition: color 0.25s, border-color 0.25s;
+    margin: 2rem 4rem 0;
+  }
+
+  .back-home-btn::before {
+    content: '←';
+    font-size: 0.85rem;
+  }
+
+  .back-home-btn:hover {
+    color: var(--charcoal);
+    border-color: var(--mid-gray);
+  }
+
+  @media (max-width: 900px) {
+    .back-home-btn { margin: 1.25rem 1rem 0; }
+  }
+
+  /* HERO */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 92vh;
+    overflow: hidden;
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 5rem;
+    background: var(--white);
+  }
+
+  .hero-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 5vw, 6rem);
+    font-weight: 300;
+    line-height: 1.0;
+    color: var(--charcoal);
+    margin-bottom: 2rem;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--charcoal);
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+    line-height: 1.9;
+    color: var(--accent);
+    max-width: 300px;
+    margin-bottom: 3rem;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    text-decoration: none;
+    cursor: pointer;
+    transition: gap 0.3s;
+    border: none;
+    background: none;
+  }
+
+  .hero-cta:hover { gap: 2.5rem; }
+
+  .hero-cta::after {
+    content: '→';
+    font-size: 1rem;
+  }
+
+  .hero-visual {
+    background: var(--light-gray);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 3rem;
+    background: linear-gradient(180deg, #e0deda 0%, #cac7c3 100%);
+  }
+
+  .hero-placeholder svg {
+    width: 55%;
+    opacity: 0.35;
+    margin-bottom: 2rem;
+  }
+
+  .hero-image-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--dark-gray);
+  }
+
+  .hero-badge {
+    position: absolute;
+    top: 2.5rem;
+    left: 2.5rem;
+    background: var(--white);
+    padding: 0.75rem 1.25rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+  }
+
+  /* SECTION */
+  .section-header {
+    text-align: center;
+    padding: 5rem 4rem 3rem;
+  }
+
+  .section-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--charcoal);
+  }
+
+  /* PRODUCTS GRID */
+  .products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--light-gray);
+    margin: 0 4rem 5rem;
+  }
+
+  .product-card {
+    background: var(--white);
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(.25,.8,.25,1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .product-card:hover { transform: scale(0.985); }
+
+  .product-image {
+    aspect-ratio: 3/4;
+    background: var(--light-gray);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .product-image svg {
+    width: 60%;
+    opacity: 0.25;
+  }
+
+  .product-image-bg {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    font-weight: 300;
+    color: var(--mid-gray);
+    opacity: 0.15;
+    letter-spacing: 0.1em;
+  }
+
+  .add-btn {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    opacity: 0;
+    background: var(--charcoal);
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 2rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 300;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+
+  .product-card:hover .add-btn {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .product-info {
+    padding: 1.25rem 1.5rem 1.75rem;
+  }
+
+  .product-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: var(--charcoal);
+    margin-bottom: 0.35rem;
+    letter-spacing: 0.03em;
+  }
+
+  .product-type {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+    margin-bottom: 0.75rem;
+  }
+
+  .product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .product-price {
+    font-size: 0.9rem;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    font-weight: 300;
+  }
+
+  .product-colors {
+    display: flex;
+    gap: 0.35rem;
+  }
+
+  .color-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 0.5px solid var(--mid-gray);
+  }
+
+  /* STRIPE SECTION */
+  .stripe {
+    background: var(--charcoal);
+    color: var(--off-white);
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+
+  .stripe p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: 0.05em;
+    opacity: 0.9;
+  }
+
+  .stripe span {
+    display: block;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-top: 0.75rem;
+  }
+
+  /* IMAGE SLOTS */
+  .add-image-slot {
+    background: #3a3835;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background 0.3s;
+  }
+
+  .add-image-slot:hover { background: #2e2d2b; }
+
+  .add-image-slot label {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+    cursor: pointer;
+  }
+
+  .add-image-slot input[type="file"] { display: none; }
+
+  .upload-icon {
+    font-size: 1.5rem;
+    color: var(--dark-gray);
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  /* BANNER SLIDER */
+  .banner-slider {
+    width: 100%;
+    aspect-ratio: 21/7;
+    position: relative;
+    overflow: hidden;
+    background: var(--light-gray);
+    margin-bottom: 0;
+  }
+
+  .banner-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.55s cubic-bezier(.4,0,.2,1);
+  }
+
+  .banner-slide {
+    flex: 0 0 100%;
+    height: 100%;
+    position: relative;
+    background: #d0cdc8;
+    overflow: hidden;
+  }
+
+  .banner-upload-slot {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .banner-upload-slot:hover { background: rgba(0,0,0,0.04); }
+
+  .banner-upload-slot label {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--dark-gray);
+    cursor: pointer;
+  }
+
+  .banner-upload-slot input[type="file"] { display: none; }
+
+  .banner-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.8);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    color: var(--charcoal);
+    cursor: pointer;
+    z-index: 10;
+    line-height: 1;
+    transition: background 0.2s;
+  }
+
+  .banner-btn:hover { background: rgba(255,255,255,0.97); }
+  .banner-prev { right: 1rem; }
+  .banner-next { left: 1rem; }
+
+  .banner-dots {
+    position: absolute;
+    bottom: 0.9rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 10;
+  }
+
+  .banner-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(30,29,27,0.25);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    border: none;
+    padding: 0;
+  }
+
+  .banner-dot.active {
+    background: var(--charcoal);
+    transform: scale(1.3);
+  }
+
+  @media (max-width: 900px) {
+    .banner-slider { aspect-ratio: 16/7; }
+    .banner-btn { width: 32px; height: 32px; font-size: 1.1rem; }
+  }
+
+  /* PAGE TRANSITIONS */
+  .page-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  #main-content,
+  .category-page,
+  .about-page {
+    animation: none;
+  }
+
+  .page-enter {
+    animation: slideIn 0.45s cubic-bezier(.4,0,.2,1) forwards;
+  }
+
+  .page-exit {
+    animation: slideOut 0.35s cubic-bezier(.4,0,.2,1) forwards;
+    pointer-events: none;
+    position: absolute;
+    top: 0; left: 0; right: 0;
+  }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(-40px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes slideOut {
+    from { opacity: 1; transform: translateX(0); }
+    to   { opacity: 0; transform: translateX(40px); }
+  }
+
+  /* CATEGORY TABS */
+  .cat-tabs {
+    display: flex;
+    gap: 0;
+    margin: 0 4rem 2.5rem;
+    border-bottom: 0.5px solid var(--light-gray);
+  }
+
+  .cat-tab {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 0.75rem 1.5rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: var(--mid-gray);
+    cursor: pointer;
+    margin-bottom: -0.5px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .cat-tab:hover { color: var(--dark-gray); }
+
+  .cat-tab.active {
+    color: var(--charcoal);
+    border-bottom-color: var(--charcoal);
+  }
+
+  @media (max-width: 900px) {
+    .cat-tabs { margin: 0 1rem 1.5rem; overflow-x: auto; }
+    .cat-tab { padding: 0.6rem 0.9rem; font-size: 0.65rem; white-space: nowrap; }
+  }
+
+  /* CATEGORY PAGES */
+  .category-page {
+    padding: 0 0 5rem;
+    display: none;
+  }
+
+  .category-page.active {
+    display: block;
+  }
+
+  .category-page-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin: 2rem 4rem 3rem;
+    border-bottom: 0.5px solid var(--light-gray);
+    padding-bottom: 1.5rem;
+  }
+
+  .category-page-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: var(--charcoal);
+  }
+
+  .category-page-count {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--mid-gray);
+    text-transform: uppercase;
+  }
+
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--light-gray);
+    margin: 0 4rem;
+  }
+
+  .cat-card {
+    background: var(--white);
+    cursor: pointer;
+    transition: transform 0.3s;
+    position: relative;
+  }
+
+  .cat-card:hover { transform: scale(0.985); }
+
+  .cat-image {
+    aspect-ratio: 3/4;
+    background: var(--light-gray);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cat-upload {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: #3a3835;
+    transition: background 0.3s;
+  }
+
+  .cat-upload:hover { background: #2e2d2b; }
+
+  .cat-upload label {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+    cursor: pointer;
+  }
+
+  .cat-upload input[type="file"] { display: none; }
+
+  .cat-add-btn {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    opacity: 0;
+    background: var(--charcoal);
+    color: var(--white);
+    border: none;
+    padding: 0.6rem 1.5rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+
+  .cat-card:hover .cat-add-btn { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  .cat-info { padding: 1rem 1.25rem 1.5rem; }
+
+  .cat-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: var(--charcoal);
+    margin-bottom: 0.25rem;
+  }
+
+  .cat-price {
+    font-size: 0.8rem;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+  }
+
+  /* ABOUT PAGE */
+  .about-page {
+    display: none;
+    padding: 0 4rem 6rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .about-page.active { display: block; }
+
+  .about-page h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--charcoal);
+    margin-bottom: 2rem;
+    line-height: 1.1;
+    margin-top: 2.5rem;
+  }
+
+  .about-page h2 em { font-style: italic; color: var(--accent); }
+
+  .about-page p {
+    font-size: 0.9rem;
+    line-height: 2;
+    color: var(--dark-gray);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.03em;
+  }
+
+  .about-upload-zone {
+    width: 100%;
+    aspect-ratio: 16/7;
+    background: var(--light-gray);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 3rem 0;
+    cursor: pointer;
+    transition: background 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-upload-zone:hover { background: #d0cdc8; }
+
+  .about-upload-zone label {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--dark-gray);
+    cursor: pointer;
+  }
+
+  .about-upload-zone input[type="file"] { display: none; }
+
+  .main-content { display: block; }
+  .main-content.hidden { display: none; }
+
+  @media (max-width: 900px) {
+    .category-grid { grid-template-columns: repeat(2, 1fr); margin: 0 1rem; }
+    .category-page { padding: 0 0 3rem; }
+    .category-page-header { margin: 1.25rem 1rem 2rem; }
+    .about-page { padding: 0 1.5rem 3rem; max-width: 100%; }
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--charcoal);
+    color: var(--off-white);
+    padding: 3rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .footer-brand .logo {
+    color: var(--off-white);
+    font-size: 1.5rem;
+  }
+
+  .footer-brand p {
+    font-size: 0.75rem;
+    color: var(--mid-gray);
+    margin-top: 1rem;
+    line-height: 1.8;
+    letter-spacing: 0.03em;
+  }
+
+  .footer-links h4 {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-links ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .footer-links a {
+    font-size: 0.8rem;
+    color: var(--off-white);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+
+  .footer-links a:hover { opacity: 1; }
+
+  .footer-bottom {
+    grid-column: 1 / -1;
+    border-top: 0.5px solid rgba(255,255,255,0.1);
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--mid-gray);
+  }
+
+  .bottom-nav {
+    display: none;
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 0.75rem 1.25rem; width: calc(100% - 2rem); border-radius: 40px; top: 1rem; gap: 0.75rem; }
+    nav ul { display: flex; gap: 0.6rem; overflow-x: auto; flex-shrink: 1; }
+    nav ul::-webkit-scrollbar { display: none; }
+    nav ul a { font-size: 0.6rem; letter-spacing: 0.08em; }
+    .bottom-nav { display: none; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-visual { height: 50vw; min-height: 280px; }
+    .products { grid-template-columns: 1fr 1fr; margin: 0 1rem 3rem; }
+    footer { grid-template-columns: 1fr; padding: 2rem; }
+    .footer-bottom { flex-direction: column; gap: 0.5rem; }
+    .section-header { padding: 3rem 2rem 2rem; }
+  }
+
+  /* CART SIDEBAR */
+  .cart-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(30,29,27,0.35);
+    z-index: 200;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s;
+    backdrop-filter: blur(2px);
+  }
+  .cart-overlay.open { opacity: 1; pointer-events: all; }
+
+  .cart-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 380px;
+    max-width: 92vw;
+    height: 100vh;
+    background: var(--white);
+    z-index: 300;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-100%);
+    transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+    box-shadow: 4px 0 40px rgba(30,29,27,0.13);
+  }
+  .cart-sidebar.open { transform: translateX(0); }
+
+  .cart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.75rem 1.75rem 1.25rem;
+    border-bottom: 0.5px solid var(--light-gray);
+  }
+
+  .cart-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--charcoal);
+    letter-spacing: 0.05em;
+  }
+
+  .cart-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--accent);
+    font-size: 1.5rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.75rem;
+    border: 0.5px solid var(--light-gray);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .cart-close:hover { border-color: var(--mid-gray); color: var(--charcoal); }
+  .cart-close::before { content: '→'; font-size: 1rem; }
+
+  .cart-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.25rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .cart-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--mid-gray);
+    gap: 1rem;
+  }
+
+  .cart-empty-icon {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    font-weight: 300;
+    opacity: 0.15;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    color: var(--charcoal);
+  }
+
+  .cart-empty p {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .cart-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding-bottom: 1.25rem;
+    border-bottom: 0.5px solid var(--light-gray);
+  }
+
+  .cart-item:last-child { border-bottom: none; }
+
+  .cart-item-img {
+    width: 72px;
+    height: 90px;
+    object-fit: cover;
+    background: var(--light-gray);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .cart-item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cart-item-img-placeholder {
+    width: 72px;
+    height: 90px;
+    background: var(--light-gray);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--mid-gray);
+    opacity: 0.5;
+  }
+
+  .cart-item-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .cart-item-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--charcoal);
+    letter-spacing: 0.03em;
+  }
+
+  .cart-item-type {
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+  }
+
+  .cart-item-price {
+    font-size: 0.85rem;
+    color: var(--accent);
+    margin-top: auto;
+    padding-top: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  .cart-item-remove {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--mid-gray);
+    font-size: 0.85rem;
+    padding: 0;
+    line-height: 1;
+    transition: color 0.2s;
+  }
+  .cart-item-remove:hover { color: var(--charcoal); }
+
+  .cart-footer {
+    padding: 1.5rem 1.75rem 2rem;
+    border-top: 0.5px solid var(--light-gray);
+  }
+
+  .cart-total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1.5rem;
+  }
+
+  .cart-total-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+  }
+
+  .cart-total-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--charcoal);
+  }
+
+  .cart-checkout-btn {
+    width: 100%;
+    background: var(--charcoal);
+    color: var(--white);
+    border: none;
+    padding: 1rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 300;
+    cursor: pointer;
+    transition: background 0.25s;
+  }
+  .cart-checkout-btn:hover { background: var(--dark-gray); }
+
+
+  /* PRODUCT MODAL */
+  .product-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(30,29,27,0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 400;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .product-modal-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .product-modal {
+    background: var(--white);
+    max-width: 820px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    display: flex;
+    position: relative;
+    transform: translateY(30px);
+    transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+  }
+  .product-modal-overlay.open .product-modal {
+    transform: translateY(0);
+  }
+
+  .product-modal-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: var(--charcoal);
+    line-height: 1;
+    z-index: 10;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+  }
+  .product-modal-close:hover { opacity: 0.5; }
+
+  .product-modal-img {
+    width: 50%;
+    flex-shrink: 0;
+    background: var(--light-gray);
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+  .product-modal-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+  }
+  .product-modal-img-placeholder {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    color: var(--mid-gray);
+    opacity: 0.2;
+  }
+
+  .product-modal-info {
+    flex: 1;
+    padding: 3rem 2.5rem 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .product-modal-type {
+    font-size: 0.62rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+  }
+
+  .product-modal-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--charcoal);
+    line-height: 1.15;
+    letter-spacing: 0.03em;
+  }
+
+  .product-modal-price {
+    font-size: 1.1rem;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    margin-top: 0.5rem;
+  }
+
+  .product-modal-divider {
+    height: 0.5px;
+    background: var(--light-gray);
+    margin: 0.5rem 0;
+  }
+
+  .product-modal-desc {
+    font-size: 0.82rem;
+    line-height: 1.9;
+    color: var(--dark-gray);
+    letter-spacing: 0.03em;
+  }
+
+  .product-modal-add {
+    margin-top: auto;
+    background: var(--charcoal);
+    color: var(--white);
+    border: none;
+    padding: 1rem 2rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 300;
+    cursor: pointer;
+    transition: background 0.25s;
+    align-self: flex-start;
+    width: 100%;
+  }
+  .product-modal-add:hover { background: var(--dark-gray); }
+
+  @media (max-width: 600px) {
+    .product-modal { flex-direction: column; max-height: 95vh; }
+    .product-modal-img { width: 100%; min-height: 260px; }
+    .product-modal-info { padding: 2rem 1.5rem; }
+  }
+
+
+  /* EMPTY CART MODAL */
+  .empty-cart-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(30,29,27,0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 500;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .empty-cart-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .empty-cart-modal {
+    background: var(--white);
+    padding: 3.5rem 3.5rem 3rem;
+    position: relative;
+    min-width: 320px;
+    text-align: center;
+    transform: translateY(24px) scale(0.97);
+    transition: transform 0.4s cubic-bezier(.4,0,.2,1), opacity 0.35s;
+    overflow: hidden;
+  }
+  .empty-cart-overlay.open .empty-cart-modal {
+    transform: translateY(0) scale(1);
+  }
+  .empty-cart-modal-bg-letter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14rem;
+    font-weight: 300;
+    color: var(--charcoal);
+    opacity: 0.045;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+    letter-spacing: -0.05em;
+  }
+  .empty-cart-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--charcoal);
+    line-height: 1;
+    transition: opacity 0.2s;
+    z-index: 2;
+  }
+  .empty-cart-modal-close:hover { opacity: 0.4; }
+  .empty-cart-modal-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.9rem;
+    font-weight: 300;
+    color: var(--charcoal);
+    letter-spacing: 0.06em;
+    position: relative;
+    z-index: 2;
+    line-height: 1.3;
+  }
+  .empty-cart-modal-sub {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+    margin-top: 0.75rem;
+    position: relative;
+    z-index: 2;
+  }
+
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo" onclick="showPage('home');return false;">KLIŌ</a>
+  <ul>
+    <li><a href="#" onclick="showPage('top');return false;">טופ</a></li>
+    <li><a href="#" onclick="showPage('bottom');return false;">תחתון</a></li>
+    <li><a href="#" onclick="showPage('sets');return false;">סטים</a></li>
+    <li><a href="#" onclick="showPage('swimsuit');return false;">בגד ים מלא</a></li>
+    <li><a href="#" onclick="showPage('home');setTimeout(()=>{const el=document.getElementById('meumlatzim');if(el)el.scrollIntoView({behavior:'smooth'});},100);return false;">הממולצים</a></li>
+    <li><a href="#" onclick="showPage('about');return false;">אודות</a></li>
+  </ul>
+  <div class="nav-icons">
+    <span class="nav-icon cart-trigger" onclick="toggleCart()">עגלה (<span id="cart-count">0</span>)</span>
+  </div>
+</nav>
+
+<nav class="bottom-nav">
+  <a href="#">טופ</a>
+  <a href="#">תחתון</a>
+  <a href="#">סטים</a>
+  <a href="#">בגד ים שלם</a>
+  <a href="#">הממולצים</a>
+  <a href="#">אודות</a>
+</nav>
+<div id="main-content">
+<section class="hero">
+  <div class="hero-text">
+    <h1 class="hero-title">
+      <em>היופי שבפרטים <span style="font-size:80%;">הקטנים.</span></em>
+    </h1>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-placeholder">
+      <svg viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <ellipse cx="100" cy="80" rx="40" ry="50" fill="none" stroke="#3a3835" stroke-width="1.5"/>
+        <path d="M60 130 Q40 180 50 250 Q70 260 100 255 Q130 260 150 250 Q160 180 140 130 Z" fill="none" stroke="#3a3835" stroke-width="1.5"/>
+        <line x1="60" y1="130" x2="100" y2="155" stroke="#3a3835" stroke-width="1"/>
+        <line x1="140" y1="130" x2="100" y2="155" stroke="#3a3835" stroke-width="1"/>
+        <path d="M80 155 Q100 200 120 155" fill="none" stroke="#3a3835" stroke-width="1"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<div class="section-header" id="meumlatzim">
+  <h2 class="section-title">המומלצים</h2>
+</div>
+
+
+<div class="products" id="products">
+
+  <!-- Card 1 -->
+  <div class="product-card" onclick="openProductModal('Luna Triangle Top','₪290','ביקיני • עליונית',document.getElementById('img1-preview').style.display!=='none'?document.getElementById('img1-preview').src:null)" style="cursor:pointer;">
+    <div class="product-image">
+      <div class="product-image-bg">K</div>
+      <div class="add-image-slot">
+        <svg class="upload-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        <label for="img1">הוסיפי תמונה</label>
+        <input type="file" id="img1" accept="image/*" onchange="loadImage(event,'img1-preview')">
+      </div>
+      <img id="img1-preview" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;">
+      <button class="add-btn" onclick="addToCart('Luna Triangle Top','₪290','ביקיני • עליונית',document.getElementById('img1-preview').style.display!=='none'?document.getElementById('img1-preview').src:null)">הוסיפי לעגלה</button>
+    </div>
+    <div class="product-info">
+      <h3 class="product-name">Luna Triangle Top</h3>
+      <div class="product-footer">
+        <span class="product-price">₪290</span>
+        <div class="product-colors">
+          <div class="color-dot" style="background:#e8e6e2;"></div>
+          <div class="color-dot" style="background:#b0ada8;"></div>
+          <div class="color-dot" style="background:#3a3835;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="product-card" onclick="openProductModal('Luna Brief','₪240','ביקיני • תחתונית',document.getElementById('img2-preview').style.display!=='none'?document.getElementById('img2-preview').src:null)" style="cursor:pointer;">
+    <div class="product-image">
+      <div class="product-image-bg">K</div>
+      <div class="add-image-slot">
+        <svg class="upload-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        <label for="img2">הוסיפי תמונה</label>
+        <input type="file" id="img2" accept="image/*" onchange="loadImage(event,'img2-preview')">
+      </div>
+      <img id="img2-preview" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;">
+      <button class="add-btn" onclick="addToCart('Luna Brief','₪240','ביקיני • תחתונית',document.getElementById('img2-preview').style.display!=='none'?document.getElementById('img2-preview').src:null)">הוסיפי לעגלה</button>
+    </div>
+    <div class="product-info">
+      <h3 class="product-name">Luna Brief</h3>
+      <div class="product-footer">
+        <span class="product-price">₪240</span>
+        <div class="product-colors">
+          <div class="color-dot" style="background:#e8e6e2;"></div>
+          <div class="color-dot" style="background:#b0ada8;"></div>
+          <div class="color-dot" style="background:#3a3835;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="product-card" onclick="openProductModal('Aura One-Piece','₪480','בגד ים שלם',document.getElementById('img3-preview').style.display!=='none'?document.getElementById('img3-preview').src:null)" style="cursor:pointer;">
+    <div class="product-image">
+      <div class="product-image-bg">K</div>
+      <div class="add-image-slot">
+        <svg class="upload-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        <label for="img3">הוסיפי תמונה</label>
+        <input type="file" id="img3" accept="image/*" onchange="loadImage(event,'img3-preview')">
+      </div>
+      <img id="img3-preview" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;">
+      <button class="add-btn" onclick="addToCart('Aura One-Piece','₪480','בגד ים שלם',document.getElementById('img3-preview').style.display!=='none'?document.getElementById('img3-preview').src:null)">הוסיפי לעגלה</button>
+    </div>
+    <div class="product-info">
+      <h3 class="product-name">Aura One-Piece</h3>
+      <div class="product-footer">
+        <span class="product-price">₪480</span>
+        <div class="product-colors">
+          <div class="color-dot" style="background:#ffffff; border-color:#ccc;"></div>
+          <div class="color-dot" style="background:#b0ada8;"></div>
+          <div class="color-dot" style="background:#1e1d1b;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="product-card" onclick="openProductModal('Mère Bandeau Top','₪310','ביקיני • עליונית',document.getElementById('img4-preview').style.display!=='none'?document.getElementById('img4-preview').src:null)" style="cursor:pointer;">
+    <div class="product-image">
+      <div class="product-image-bg">K</div>
+      <div class="add-image-slot">
+        <svg class="upload-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        <label for="img4">הוסיפי תמונה</label>
+        <input type="file" id="img4" accept="image/*" onchange="loadImage(event,'img4-preview')">
+      </div>
+      <img id="img4-preview" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;">
+      <button class="add-btn" onclick="addToCart('Mère Bandeau Top','₪310','ביקיני • עליונית',document.getElementById('img4-preview').style.display!=='none'?document.getElementById('img4-preview').src:null)">הוסיפי לעגלה</button>
+    </div>
+    <div class="product-info">
+      <h3 class="product-name">Mère Bandeau Top</h3>
+      <div class="product-footer">
+        <span class="product-price">₪310</span>
+        <div class="product-colors">
+          <div class="color-dot" style="background:#e8e6e2;"></div>
+          <div class="color-dot" style="background:#3a3835;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 5 -->
+  <div class="product-card" onclick="openProductModal('Séraph Pareo','₪220','חוף • פרו',document.getElementById('img5-preview').style.display!=='none'?document.getElementById('img5-preview').src:null)" style="cursor:pointer;">
+    <div class="product-image">
+      <div class="product-image-bg">K</div>
+      <div class="add-image-slot">
+        <svg class="upload-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        <label for="img5">הוסיפי תמונה</label>
+        <input type="file" id="img5" accept="image/*" onchange="loadImage(event,'img5-preview')">
+      </div>
+      <img id="img5-preview" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;">
+      <button class="add-btn" onclick="addToCart('Séraph Pareo','₪220','חוף • פרו',document.getElementById('img5-preview').style.display!=='none'?document.getElementById('img5-preview').src:null)">הוסיפי לעגלה</button>
+    </div>
+    <div class="product-info">
+      <h3 class="product-name">Séraph Pareo</h3>
+      <div class="product-footer">
+        <span class="product-price">₪220</span>
+        <div class="product-colors">
+          <div class="color-dot" style="background:#e8e6e2;"></div>
+          <div class="color-dot" style="background:#b0ada8;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 6 -->
+  <div class="product-card" onclick="openProductModal('Noire Halter Set','₪520','ביקיני • סט מלא',document.getElementById('img6-preview').style.display!=='none'?document.getElementById('img6-preview').src:null)" style="cursor:pointer;">
+    <div class="product-image">
+      <div class="product-image-bg">K</div>
+      <div class="add-image-slot">
+        <svg class="upload-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        <label for="img6">הוסיפי תמונה</label>
+        <input type="file" id="img6" accept="image/*" onchange="loadImage(event,'img6-preview')">
+      </div>
+      <img id="img6-preview" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;">
+      <button class="add-btn" onclick="addToCart('Noire Halter Set','₪520','ביקיני • סט מלא',document.getElementById('img6-preview').style.display!=='none'?document.getElementById('img6-preview').src:null)">הוסיפי לעגלה</button>
+    </div>
+    <div class="product-info">
+      <h3 class="product-name">Noire Halter Set</h3>
+      <div class="product-footer">
+        <span class="product-price">₪520</span>
+        <div class="product-colors">
+          <div class="color-dot" style="background:#1e1d1b;"></div>
+          <div class="color-dot" style="background:#b0ada8;"></div>
+          <div class="color-dot" style="background:#e8e6e2;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</div><!-- /main-content -->
+
+<!-- CATEGORY PAGES -->
+
+<div class="category-page" id="page-top">
+  <button class="back-home-btn" onclick="showPage('home')">לדף הבית</button>
+  <div class="category-page-header">
+    <h2 class="category-page-title">טופ</h2>
+    
+  </div>
+  <div class="category-grid" id="grid-top"></div>
+</div>
+
+<div class="category-page" id="page-bottom">
+  <button class="back-home-btn" onclick="showPage('home')">לדף הבית</button>
+  <div class="category-page-header">
+    <h2 class="category-page-title">תחתון</h2>
+    
+  </div>
+  <div class="category-grid" id="grid-bottom"></div>
+</div>
+
+<div class="category-page" id="page-sets">
+  <button class="back-home-btn" onclick="showPage('home')">לדף הבית</button>
+  <div class="category-page-header">
+    <h2 class="category-page-title">סטים</h2>
+    <span class="category-page-count">סטים מלאים</span>
+  </div>
+  <div class="category-grid" id="grid-sets"></div>
+</div>
+
+<div class="category-page" id="page-swimsuit">
+  <button class="back-home-btn" onclick="showPage('home')">לדף הבית</button>
+  <div class="category-page-header">
+    <h2 class="category-page-title">בגד ים מלא</h2>
+    
+  </div>
+  <div class="category-grid" id="grid-swimsuit"></div>
+</div>
+
+<div class="about-page" id="page-about">
+  <button class="back-home-btn" style="margin-right:0;margin-left:0;" onclick="showPage('home')">לדף הבית</button>
+  <h2>אנחנו <em>KLIŌ</em></h2>
+  <div class="about-upload-zone" id="about-upload-zone">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#8a8680" stroke-width="1.2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+    <label for="about-img">הוסיפי תמונת קאבר</label>
+    <input type="file" id="about-img" accept="image/*" onchange="loadAboutImage(event)">
+    <img id="about-img-preview" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;">
+  </div>
+  <p>היי, אני הילה, והלב מאחורי KLIŌ ✨<br><br>
+תמיד חלמתי על בגדי ים שהם לא רק טרנדיים, אלא באמת יושבים מושלם ומרגישים כמו עור שני. בגלל זה הקמתי את KLIŌ — מותג בגדי ים שכולו מוקדש לנערות ונשים צעירות שאוהבות סטייל מדויק ולא מתפשרות על איכות.<br><br>
+מה שמיוחד אצלנו? כל בגד ים עובר תחת הידיים שלי. אני תופרת הכל בעצמי, מאפס, עם המון אהבה, תשומת לב לפרטים הקטנים ביותר והקדשת זמן מלא לכל סט וסט. כשאת לובשת את KLIŌ, תדעי שקיבלת פריט ייחודי שנתפר במיוחד בשבילך — כדי שתזהרי בחוף.<br><br>
+מוזמנת להתאהב בדגם הבא שלך!</p>
+  <p>כל פריט מעוצב בפלטת אפור-לבן מינימליסטית, מחומרים איכותיים, עם תשומת לב לפרטים הקטנים שעושים את ההבדל.</p>
+  <p style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-style:italic; color:var(--accent); border-top: 0.5px solid var(--light-gray); padding-top: 2rem; margin-top: 1rem;">
+    היופי שבפרטים הקטנים.
+  </p>
+</div>
+
+<!-- STRIPE -->
+<div class="stripe">
+  <p>היופי שבפרטים הקטנים.</p>
+  
+</div>
+<script>
+function loadImage(event, previewId) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const preview = document.getElementById(previewId);
+    preview.src = e.target.result;
+    preview.style.display = 'block';
+    const slot = preview.previousElementSibling;
+    if (slot) slot.style.display = 'none';
+  };
+  reader.readAsDataURL(file);
+}
+
+const bannerState = {};
+
+function initBanners() {
+  document.querySelectorAll('.banner-slider').forEach(slider => {
+    const id = slider.id;
+    const slides = slider.querySelectorAll('.banner-slide');
+    bannerState[id] = 0;
+    const dotsContainer = slider.querySelector('.banner-dots');
+    slides.forEach((slide, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'banner-dot' + (i === 0 ? ' active' : '');
+      dot.onclick = () => goToBanner(id, i);
+      dotsContainer.appendChild(dot);
+      const input = slide.querySelector('input[type="file"]');
+      if (input) {
+        input.addEventListener('change', function(e) {
+          const file = e.target.files[0];
+          if (!file) return;
+          const reader = new FileReader();
+          reader.onload = ev => {
+            const img = slide.querySelector('.banner-img');
+            img.src = ev.target.result;
+            img.style.display = 'block';
+            slide.querySelector('.banner-upload-slot').style.display = 'none';
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+    });
+  });
+}
+
+function goToBanner(id, index) {
+  const slider = document.getElementById(id);
+  const slides = slider.querySelectorAll('.banner-slide');
+  bannerState[id] = (index + slides.length) % slides.length;
+  slider.querySelector('.banner-track').style.transform = `translateX(${bannerState[id] * 100}%)`;
+  slider.querySelectorAll('.banner-dot').forEach((d, i) => d.classList.toggle('active', i === bannerState[id]));
+}
+
+function slideBanner(id, dir) {
+  goToBanner(id, (bannerState[id] || 0) + dir);
+}
+
+const categoryData = {
+  top:      { label: 'טופ', items: [
+    { name: 'Luna Triangle Top', type: 'עליונית', price: '₪290' },
+    { name: 'Mère Bandeau Top', type: 'בנדו', price: '₪310' },
+    { name: 'Dune Halter Top', type: 'הולטר', price: '₪295' },
+    { name: 'Sable Underwire Top', type: 'עם תיל', price: '₪330' },
+  ]},
+  bottom:   { label: 'תחתון', items: [
+    { name: 'Luna Brief', type: 'ברף', price: '₪240' },
+    { name: 'Côte Cheeky', type: 'צ\'יקי', price: '₪220' },
+    { name: 'Dune High Brief', type: 'גבוה', price: '₪255' },
+    { name: 'Sable Bikini Bottom', type: 'קלאסי', price: '₪230' },
+  ]},
+  sets:     { label: 'סטים', items: [
+    { name: 'Noire Halter Set', type: 'סט מלא', price: '₪520' },
+    { name: 'Luna Set', type: 'סט מלא', price: '₪490' },
+    { name: 'Dune Set', type: 'סט מלא', price: '₪535' },
+    { name: 'Côte Set', type: 'סט מלא', price: '₪510' },
+  ]},
+  swimsuit: { label: 'בגד ים מלא', items: [
+    { name: 'Aura One-Piece', type: 'חתוך גבוה', price: '₪480' },
+    { name: 'Mer One-Piece', type: 'גב פתוח', price: '₪495' },
+    { name: 'Séraph Swimsuit', type: 'קלאסי', price: '₪460' },
+    { name: 'Blanc Swimsuit', type: 'עם רוכסן', price: '₪510' },
+  ]},
+};
+
+let catImgCounters = {};
+
+function buildCategoryGrids() {
+  Object.entries(categoryData).forEach(([key, data]) => {
+    const grid = document.getElementById('grid-' + key);
+    if (!grid) return;
+    catImgCounters[key] = catImgCounters[key] || 0;
+    data.items.forEach((item, i) => {
+      const id = 'cat-' + key + '-' + i;
+      const card = document.createElement('div');
+      card.className = 'cat-card';
+      card.addEventListener('click', function(e) {
+        if (e.target.closest('.cat-add-btn') || e.target.closest('input') || e.target.closest('label')) return;
+        const prev = document.getElementById(id + '-preview');
+        const imgSrc = prev && prev.style.display !== 'none' ? prev.src : null;
+        openProductModal(item.name, item.price, item.type, imgSrc);
+      });
+      card.innerHTML = `
+        <div class="cat-image">
+          <div class="cat-upload">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#8a8680" stroke-width="1.2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            <label for="${id}">הוסיפי תמונה</label>
+            <input type="file" id="${id}" accept="image/*">
+          </div>
+          <img id="${id}-preview" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;">
+          <button class="cat-add-btn">הוסיפי לעגלה</button>
+        </div>
+        <div class="cat-info">
+          <p class="cat-name">${item.name}</p>
+          <p class="cat-price">${item.price}</p>
+        </div>
+      `;
+      card.querySelector('input[type="file"]').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = ev => {
+          const prev = document.getElementById(id + '-preview');
+          prev.src = ev.target.result;
+          prev.style.display = 'block';
+          card.querySelector('.cat-upload').style.display = 'none';
+        };
+        reader.readAsDataURL(file);
+      });
+      card.querySelector('.cat-add-btn').addEventListener('click', function(e) {
+        e.stopPropagation();
+        const prev = document.getElementById(id + '-preview');
+        const imgSrc = prev && prev.style.display !== 'none' ? prev.src : null;
+        addToCart(item.name, item.price, item.type, imgSrc);
+        this.textContent = 'נוסף ✓';
+        this.style.background = '#5f5e5a';
+        setTimeout(() => { this.textContent = 'הוסיפי לעגלה'; this.style.background = '#1e1d1b'; }, 1800);
+      });
+      grid.appendChild(card);
+    });
+  });
+}
+
+function showPage(page) {
+  const main = document.getElementById('main-content');
+  const pages = document.querySelectorAll('.category-page, .about-page');
+  const stripe = document.querySelector('.stripe');
+
+  pages.forEach(p => p.classList.remove('active'));
+
+  if (page === 'home') {
+    main.style.display = 'block';
+    stripe.style.display = 'block';
+  } else if (page === 'about') {
+    main.style.display = 'none';
+    stripe.style.display = 'none';
+    document.getElementById('page-about').classList.add('active');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  } else {
+    main.style.display = 'none';
+    stripe.style.display = 'none';
+    const target = document.getElementById('page-' + page);
+    if (target) target.classList.add('active');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+}
+
+function loadAboutImage(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    const prev = document.getElementById('about-img-preview');
+    prev.src = e.target.result;
+    prev.style.display = 'block';
+    document.querySelector('.about-upload-zone label').style.display = 'none';
+    document.querySelector('.about-upload-zone svg').style.display = 'none';
+  };
+  reader.readAsDataURL(file);
+}
+
+buildCategoryGrids();
+initBanners();
+
+
+// CART LOGIC
+let cartItems = [];
+
+function toggleCart() {
+  const overlay = document.getElementById('cart-overlay');
+  const sidebar = document.getElementById('cart-sidebar');
+  overlay.classList.toggle('open');
+  sidebar.classList.toggle('open');
+}
+
+function addToCart(name, price, type, imgSrc) {
+  const existing = cartItems.find(i => i.name === name);
+  if (existing) {
+    existing.qty = (existing.qty || 1) + 1;
+  } else {
+    cartItems.push({ name, price, type, imgSrc, qty: 1 });
+  }
+  renderCart();
+  // Open cart
+  document.getElementById('cart-overlay').classList.add('open');
+  document.getElementById('cart-sidebar').classList.add('open');
+}
+
+function removeFromCart(name) {
+  cartItems = cartItems.filter(i => i.name !== name);
+  renderCart();
+}
+
+function renderCart() {
+  const container = document.getElementById('cart-items');
+  const empty = document.getElementById('cart-empty');
+  const countEl = document.getElementById('cart-count');
+  const totalEl = document.getElementById('cart-total');
+
+  const totalQty = cartItems.reduce((s, i) => s + (i.qty || 1), 0);
+  countEl.textContent = totalQty;
+
+  if (cartItems.length === 0) {
+    container.innerHTML = '<div class="cart-empty"><div class="cart-empty-icon">K</div><p>העגלה ריקה</p></div>';
+    totalEl.textContent = '₪0';
+    return;
+  }
+
+  let html = '';
+  let total = 0;
+  cartItems.forEach(item => {
+    const priceNum = parseInt(item.price.replace(/[^0-9]/g, ''));
+    total += priceNum * (item.qty || 1);
+    const imgHtml = item.imgSrc
+      ? `<div class="cart-item-img"><img src="${item.imgSrc}" alt="${item.name}"></div>`
+      : `<div class="cart-item-img-placeholder">K</div>`;
+    html += `
+      <div class="cart-item">
+        ${imgHtml}
+        <div class="cart-item-info">
+          <span class="cart-item-type">${item.type}</span>
+          <span class="cart-item-name">${item.name}</span>
+          <span class="cart-item-price">${item.price}${item.qty > 1 ? ' × ' + item.qty : ''}</span>
+        </div>
+        <button class="cart-item-remove" onclick="removeFromCart('${item.name.replace(/'/g, "\'")}')">✕</button>
+      </div>`;
+  });
+
+  container.innerHTML = html;
+  totalEl.textContent = '₪' + total.toLocaleString('he-IL');
+}
+
+
+// PRODUCT MODAL
+function openProductModal(name, price, type, imgSrc) {
+  document.getElementById('modal-name').textContent = name;
+  document.getElementById('modal-price').textContent = price;
+  document.getElementById('modal-type').textContent = type;
+
+  // Description map
+  const descs = {
+    'Luna Triangle Top': 'עיצוב משולש קלאסי עם קשירה בצוואר ובגב. עשוי מבד לייקרה איכותי עם הגנת UV.',
+    'Luna Brief': 'תחתונית ברף עם חיתוך מלא ומותן בינוני. מתאימה לכל הגופות.',
+    'Aura One-Piece': 'בגד ים שלם עם חיתוך גבוה בצד המדגיש את הרגליים. גב פתוח חצי.',
+    'Mère Bandeau Top': 'בנדו רך עם תמיכה מובנית. קשירה ייחודית לכתפיים לנגיעת אופנה.',
+    'Séraph Pareo': 'פאראו קליל רב תכליתי — גם שמלת חוף, גם כיסוי ביקיני.',
+    'Noire Halter Set': 'סט הולטר שחור מלא עם פרטי גימור עדינים. הגדרה מחדש של הקלאסיקה.',
+  };
+  document.getElementById('modal-desc').textContent = descs[name] || 'פריט מקולקציית KLIŌ — מעוצב בפרטים קטנים עם חומרים איכותיים.';
+
+  const img = document.getElementById('modal-img');
+  const placeholder = document.getElementById('modal-placeholder');
+  if (imgSrc) {
+    img.src = imgSrc;
+    img.style.display = 'block';
+    placeholder.style.display = 'none';
+  } else {
+    img.style.display = 'none';
+    placeholder.style.display = 'flex';
+  }
+
+  const addBtn = document.getElementById('modal-add-btn');
+  addBtn.onclick = function() {
+    addToCart(name, price, type, imgSrc);
+    addBtn.textContent = 'נוסף ✓';
+    addBtn.style.background = '#5f5e5a';
+    setTimeout(() => {
+      closeProductModalDirect();
+      addBtn.textContent = 'הוסיפי לעגלה';
+      addBtn.style.background = '#1e1d1b';
+    }, 800);
+  };
+
+  document.getElementById('product-modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeProductModal(e) {
+  if (e.target === document.getElementById('product-modal-overlay')) {
+    closeProductModalDirect();
+  }
+}
+
+function closeProductModalDirect() {
+  document.getElementById('product-modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+
+function handleCheckout() {
+  if (cartItems.length === 0) {
+    document.getElementById('empty-cart-overlay').classList.add('open');
+  }
+}
+
+function closeEmptyCartModal(e) {
+  if (e.target === document.getElementById('empty-cart-overlay')) {
+    document.getElementById('empty-cart-overlay').classList.remove('open');
+  }
+}
+
+</script>
+
+
+
+
+<!-- EMPTY CART MODAL -->
+<div class="empty-cart-overlay" id="empty-cart-overlay" onclick="closeEmptyCartModal(event)">
+  <div class="empty-cart-modal">
+    <span class="empty-cart-modal-bg-letter">K</span>
+    <button class="empty-cart-modal-close" onclick="document.getElementById('empty-cart-overlay').classList.remove('open')">✕</button>
+    <p class="empty-cart-modal-text">העגלה ריקה :)</p>
+    <p class="empty-cart-modal-sub">המשיכי לגלוש</p>
+  </div>
+</div>
+
+<!-- PRODUCT MODAL -->
+<div class="product-modal-overlay" id="product-modal-overlay" onclick="closeProductModal(event)">
+  <div class="product-modal" id="product-modal">
+    <button class="product-modal-close" onclick="closeProductModalDirect()">✕</button>
+    <div class="product-modal-img" id="modal-img-wrap">
+      <div class="product-modal-img-placeholder" id="modal-placeholder">K</div>
+      <img id="modal-img" src="" alt="" style="display:none;">
+    </div>
+    <div class="product-modal-info">
+      <p class="product-modal-type" id="modal-type"></p>
+      <h2 class="product-modal-name" id="modal-name"></h2>
+      <p class="product-modal-price" id="modal-price"></p>
+      <div class="product-modal-divider"></div>
+      <p class="product-modal-desc" id="modal-desc"></p>
+      <button class="product-modal-add" id="modal-add-btn">הוסיפי לעגלה</button>
+    </div>
+  </div>
+</div>
+
+<!-- CART SIDEBAR -->
+<div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+<div class="cart-sidebar" id="cart-sidebar">
+  <div class="cart-header">
+    <span class="cart-title">העגלה שלי</span>
+    <button class="cart-close" onclick="toggleCart()">סגירה</button>
+  </div>
+  <div class="cart-items" id="cart-items">
+    <div class="cart-empty" id="cart-empty">
+      <div class="cart-empty-icon">K</div>
+      <p>העגלה ריקה</p>
+    </div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total-row">
+      <span class="cart-total-label">סה״כ לתשלום</span>
+      <span class="cart-total-price" id="cart-total">₪0</span>
+    </div>
+    <button class="cart-checkout-btn" onclick="handleCheckout()">לתשלום</button>
+  </div>
+</div>
+
+</body>
+</html>
